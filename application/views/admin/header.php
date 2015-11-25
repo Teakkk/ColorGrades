@@ -12,6 +12,9 @@
     <link href="<?php echo base_url();?>assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+    <!-- jQuery Js -->
+    <script src="<?php echo base_url();?>assets/js/jquery-1.10.2.js"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -254,8 +257,20 @@
                     </li>
                     <li>
                         <?php
-                    echo anchor('user', '<i class="fa fa-user"></i> Потребители');
+                    echo anchor('user', '<i class="fa fa-user"></i> Потребители <span class="fa arrow"></span>');
                     ?>
+                    <ul class="nav nav-second-level">
+                            <li>
+                            <?php
+                            echo anchor('user/show_teacher', '<i class="fa fa-circle"></i> Учители');
+                            ?>
+                            </li>
+                            <li>
+                            <?php
+                            echo anchor('user/show_admin', '<i class="fa fa-circle"></i> Администратори');
+                            ?>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
 

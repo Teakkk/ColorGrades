@@ -22,9 +22,7 @@
                                 <div class="col-md-5 col-md-offset-2">
                                     <!-- Indicates a successful or positive action -->
                                     <?php
-                                    echo anchor('user/add_teacher/', '<button type="button" style="width: 100%;" class="btn btn-success">Добави</button>');
-                                    echo '<br/><br/>';
-                                    echo anchor('user/show_teachers/', '<button type="button" style="width: 100%;" class="btn btn-info">Прегледай</button>');
+                                    echo anchor('user/show_teacher/', '<button type="button" style="width: 100%;" class="btn btn-info">Прегледай</button>');
                                     ?>
                                 </div>
                             </div>

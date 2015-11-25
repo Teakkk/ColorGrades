@@ -3,7 +3,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="page-header">
-                            Администратори
+                            Редактиране на администратор
                         </h1>
                     </div>
                 </div>
@@ -26,10 +26,10 @@
                 </div>
                 <!-- /. ROW  -->
                 <div class="row">
-                   <div class="col-lg-3">
+                 <div class="col-lg-3">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Добави администратор
+                            Редактирай администратор
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -51,89 +51,47 @@
                                     echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>');
 
                                     // open form
-                                    echo form_open('user/add_admin_validate', array('role'=>'form'));
+                                    echo form_open('user/update_admin_validate', array('role'=>'form'));
                                     ?>
+                                    <input type="hidden" name="user_id" value="<?php echo $admin_info['user_id'];?>">
                                     <div class="form-group">
                                         <label>Име</label>
                                         <?php
-                                        echo form_input('firstname', set_value('firstname'), 'class="form-control"');
+                                        echo form_input('firstname', set_value('firstname', $admin_info['firstname']), 'class="form-control"');
                                         ?>
                                     </div>
                                     <div class="form-group">
                                         <label>Фамилия</label>
                                         <?php
-                                        echo form_input('lastname', set_value('lastname'), 'class="form-control"');
+                                        echo form_input('lastname', set_value('lastname', $admin_info['lastname']), 'class="form-control"');
                                         ?>
                                     </div>
                                     <div class="form-group">
                                         <label>Имейл</label>
                                         <?php
-                                        echo form_input('email', set_value('email'), 'class="form-control"');
+                                        echo form_input('email', set_value('email', $admin_info['email']), 'class="form-control"');
                                         ?>
                                     </div>
                                     <div class="form-group">
-                                        <label>Парола</label>
+                                        <label>*** НОВА Парола ***</label>
                                         <?php
-                                        echo form_password('password', set_value('password'), 'class="form-control"');
+                                        echo form_password('new_password', set_value('new_password'), 'class="form-control" id="password"');
                                         ?>
                                     </div>
-                                    <button type="submit" class="btn btn-default">Добави</button>
+                                    <button type="submit" class="btn btn-default">Редактирай</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div> 
             </div>
-            <div class="col-lg-9">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Администратори
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Име</th>
-                                            <th>Фамилия</th>
-                                            <th>Имейл</th>
-                                            <th>Редактирай</th>
-                                            <th>Изтрий</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        $br = 1;
-                                        foreach ($all_admins as $key => $value) {
-                                            echo '<tr>
-                                            <td>'.$br.'</td>
-                                            <td>'.$value['firstname'].'</td>
-                                            <td>'.$value['lastname'].'</td>
-                                            <td>'.$value['email'].'</td>
-                                            <td><a href="'.base_url().'user/update_admin/'.$value['user_id'].'"><button class="btn btn-warning">Редактирай</button></a></td>
-                                            <td><button class="btn btn-danger" data-href="'.base_url().'user/delete_admin/'.$value['user_id'].'" data-toggle="modal" data-target="#confirm-delete">Изтрий</button></td>
-                                        </tr>';
-                                        $br++;
-                                    }
-                                    ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div> 
         </div>
     </div>
-</div>
-<!-- /. PAGE INNER  -->
+    <!-- /. PAGE INNER  -->
 </div>
 <!-- /. PAGE WRAPPER  -->
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('#confirm-delete').on('show.bs.modal', function(e) {
-            $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-        });
-    });
+<script>
+$(document).ready(function(){
+   $('#password').tooltip({'trigger':'focus', 'title': 'ВАЖНО!!! ТОВА ПОЛЕ НЕ Е ЗАДЪЛЖИТЕЛНО!!! Добавете нова парола само ако сте 100% сигурни, че това искате!!!'});
+});
 </script>
