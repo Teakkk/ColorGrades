@@ -3,7 +3,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="page-header">
-                            Администратори
+                            Учители
                         </h1>
                     </div>
                 </div>
@@ -11,11 +11,11 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                Изтриване на администратор?
+                                Изтриване на Учител?
                             </div>
                             <div class="modal-body">
                                 <img src="<?php echo base_url();?>assets/img/warning.png" align="left">
-                                <h4>Сигурни ли сте, че искате да изтриете администратор?</h4>
+                                <h4>Сигурни ли сте, че искате да изтриете Учител?</h4>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Откажи</button>
@@ -29,7 +29,7 @@
                    <div class="col-lg-3">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Добави администратор
+                            Добави Учител
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -51,7 +51,7 @@
                                     echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>');
 
                                     // open form
-                                    echo form_open('user/add_admin_validate', array('role'=>'form'));
+                                    echo form_open('user/add_teacher_validate', array('role'=>'form'));
                                     ?>
                                     <div class="form-group">
                                         <label>Име</label>
@@ -63,6 +63,12 @@
                                         <label>Фамилия</label>
                                         <?php
                                         echo form_input('lastname', set_value('lastname'), 'class="form-control"');
+                                        ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Телефон</label>
+                                        <?php
+                                        echo form_input('phone', set_value('phone'), 'class="form-control"');
                                         ?>
                                     </div>
                                     <div class="form-group">
@@ -87,7 +93,7 @@
             <div class="col-lg-9">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Администратори
+                        Учители
                     </div>
                     <div class="panel-body">
                         <div class="row">
@@ -98,6 +104,7 @@
                                             <th>#</th>
                                             <th>Име</th>
                                             <th>Фамилия</th>
+                                            <th>Телефон</th>
                                             <th>Имейл</th>
                                             <th>Редактирай</th>
                                             <th>Изтрий</th>
@@ -105,16 +112,17 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                        if (isset($all_admins)) {
+                                        if (isset($all_teachers)) {
                                             $br = 1;
-                                            foreach ($all_admins as $key => $value) {
+                                            foreach ($all_teachers as $key => $value) {
                                                 echo '<tr>
                                                 <td>'.$br.'</td>
                                                 <td>'.$value['firstname'].'</td>
                                                 <td>'.$value['lastname'].'</td>
+                                                <td>'.$value['phone'].'</td>
                                                 <td>'.$value['email'].'</td>
-                                                <td><a href="'.base_url().'user/update_admin/'.$value['user_id'].'"><button class="btn btn-warning">Редактирай</button></a></td>
-                                                <td><button class="btn btn-danger" data-href="'.base_url().'user/delete_admin/'.$value['user_id'].'" data-toggle="modal" data-target="#confirm-delete">Изтрий</button></td>
+                                                <td><a href="'.base_url().'user/update_teacher/'.$value['user_id'].'"><button class="btn btn-warning">Редактирай</button></a></td>
+                                                <td><button class="btn btn-danger" data-href="'.base_url().'user/delete_teacher/'.$value['user_id'].'" data-toggle="modal" data-target="#confirm-delete">Изтрий</button></td>
                                                 </tr>';
                                                 $br++;
                                             }

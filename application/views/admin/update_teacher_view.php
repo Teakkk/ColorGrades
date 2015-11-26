@@ -3,7 +3,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="page-header">
-                            Редактиране на администратор
+                            Редактиране на учител
                         </h1>
                     </div>
                 </div>
@@ -12,7 +12,7 @@
                  <div class="col-lg-3">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Редактирай администратор
+                            Редактирай учител
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -34,25 +34,31 @@
                                     echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>');
 
                                     // open form
-                                    echo form_open('user/update_admin_validate', array('role'=>'form'));
+                                    echo form_open('user/update_teacher_validate', array('role'=>'form'));
                                     ?>
-                                    <input type="hidden" name="user_id" value="<?php echo $admin_info['user_id'];?>">
+                                    <input type="hidden" name="user_id" value="<?php echo $teacher_info['user_id'];?>">
                                     <div class="form-group">
                                         <label>Име</label>
                                         <?php
-                                        echo form_input('firstname', set_value('firstname', $admin_info['firstname']), 'class="form-control"');
+                                        echo form_input('firstname', set_value('firstname', $teacher_info['firstname']), 'class="form-control"');
                                         ?>
                                     </div>
                                     <div class="form-group">
                                         <label>Фамилия</label>
                                         <?php
-                                        echo form_input('lastname', set_value('lastname', $admin_info['lastname']), 'class="form-control"');
+                                        echo form_input('lastname', set_value('lastname', $teacher_info['lastname']), 'class="form-control"');
+                                        ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Телефон</label>
+                                        <?php
+                                        echo form_input('phone', set_value('phone', $teacher_info['phone']), 'class="form-control"');
                                         ?>
                                     </div>
                                     <div class="form-group">
                                         <label>Имейл</label>
                                         <?php
-                                        echo form_input('email', set_value('email', $admin_info['email']), 'class="form-control"');
+                                        echo form_input('email', set_value('email', $teacher_info['email']), 'class="form-control"');
                                         ?>
                                     </div>
                                     <div class="form-group">
