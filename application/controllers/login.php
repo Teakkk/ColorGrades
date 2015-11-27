@@ -28,9 +28,11 @@ class Login extends CI_Controller {
         {
             $this->load->model('user_model');
             if ($this->user_model->validate_login() == TRUE) {
+                $email = $this->input->post('email');
+                $user_info = $this->user_model->get_user_by_email($email);
                 $data = array(
                     'is_logged' => TRUE,
-                    'email' => $this->input->post('email')
+                    'user_id' => $user_info['user_id']
                     );
                 $this->session->set_userdata($data);
                 redirect('dashboard');

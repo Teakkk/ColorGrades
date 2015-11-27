@@ -252,11 +252,6 @@
                     </li>
                     <li>
                         <?php
-                    echo anchor('shablon', '<i class="fa fa-desktop"></i> Шаблон');
-                    ?>
-                    </li>
-                    <li>
-                        <?php
                     echo anchor('user', '<i class="fa fa-user"></i> Потребители <span class="fa arrow"></span>');
                     ?>
                     <ul class="nav nav-second-level">

@@ -13,18 +13,31 @@ class User_model extends CI_Model{
         return FALSE;
     }
 
+    public function get_user_by_email($email)
+    {
+        $q = $this->db->get_where('users', array('email' => $email));
+        return $q->row_array();
+    }
+
+    public function get_user_info($id)
+    {
+        $q = $this->db->get_where('users', array('user_id' => $id));
+        return $q->row_array();
+    }
+
     public function add_admin()
     {
         $firstname = $this->input->post('firstname');
         $lastname = $this->input->post('lastname');
         $email = $this->input->post('email');
         $password = sha1($this->input->post('password'));
-
+        $reg_date = date('Y-m-d');
         $data = array(
         'firstname' => $firstname,
         'lastname' => $lastname,
         'email' => $email,
         'password' => $password,
+        'reg_date' => $reg_date,
         'role' => 1
         );
         if ($this->db->insert('users', $data))
@@ -41,12 +54,13 @@ class User_model extends CI_Model{
         $phone = $this->input->post('phone');
         $email = $this->input->post('email');
         $password = sha1($this->input->post('password'));
-
+        $reg_date = date('Y-m-d');
         $data = array(
         'firstname' => $firstname,
         'lastname' => $lastname,
         'email' => $email,
         'password' => $password,
+        'reg_date' => $reg_date,
         'role' => 2
         );
         if ($this->db->insert('users', $data))
