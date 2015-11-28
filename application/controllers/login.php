@@ -7,7 +7,7 @@ class Login extends CI_Controller {
         $is_logged = $this->session->userdata('is_logged');
         if (!(isset($is_logged) && $is_logged == TRUE))
         {
-            $this->load->view('template/login_view');
+            $this->load->view('template/login_view2');
         }else
         {
             redirect('dashboard');
