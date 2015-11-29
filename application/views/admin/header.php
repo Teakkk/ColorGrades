@@ -265,6 +265,11 @@
                             echo anchor('user/show_admin', '<i class="fa fa-circle"></i> Администратори');
                             ?>
                             </li>
+                            <li>
+                             <?php
+                            echo anchor('doi/show_all_doi', '<i class="glyphicon glyphicon-book"></i> ДОЙ Категории');
+                            ?>
+                             </li>
                         </ul>
                     </li>
                      <li>
