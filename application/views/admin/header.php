@@ -267,6 +267,23 @@
                             </li>
                         </ul>
                     </li>
+                     <li>
+                        <?php
+                    echo anchor('user', '<i class="fa fa-circle"></i> Класове <span class="fa arrow"></span>');
+                    ?>
+                    <ul class="nav nav-second-level">
+                            <li>
+                            <?php
+                            echo anchor('classes/show_classes', '<i class="fa fa-circle"></i> Класове');
+                            ?>
+                            </li>
+                            <li>
+                            <?php
+                            echo anchor('classes/add_class', '<i class="fa fa-circle"></i> Създай клас');
+                            ?>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
 
             </div>
