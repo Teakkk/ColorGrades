@@ -3,7 +3,7 @@
 /**
 * 
 */
-class Doi_model extends CI_Controller
+class Doi_model extends CI_Model
 {
 	
 	public function get_all_doi()

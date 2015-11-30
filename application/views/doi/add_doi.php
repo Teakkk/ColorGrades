@@ -63,7 +63,7 @@ echo "</select>";
 
  ?>
 		<?php echo form_submit(array('id' => 'submit', 'value' => 'Добави')); ?>
-
+<?php echo form_close(); ?><br/>
       
     </div>
    </div>
@@ -72,4 +72,4 @@ echo "</select>";
 </div>
 
 
-<?php echo form_close(); ?><br/>
+

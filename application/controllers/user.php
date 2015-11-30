@@ -20,7 +20,7 @@ class User extends CI_Controller {
     }
 
     public function show_admin()
-    {  
+    {
         $data['all_admins'] = $this->user_model->get_all_admins();
         $data['dynamic_view'] = 'admin/show_admin_view';
         $this->load->view('admin/main_template', $data);

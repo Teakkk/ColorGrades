@@ -246,52 +246,52 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                    <?php
-                    echo anchor('dashboard', '<i class="fa fa-dashboard"></i> Начало');
-                    ?>
+                        <?php
+                        echo anchor('dashboard', '<i class="fa fa-dashboard"></i> Начало');
+                        ?>
                     </li>
                     <li>
                         <?php
-                    echo anchor('user', '<i class="fa fa-user"></i> Потребители <span class="fa arrow"></span>');
-                    ?>
-                    <ul class="nav nav-second-level">
+                        echo anchor('user', '<i class="fa fa-user"></i> Потребители <span class="fa arrow"></span>');
+                        ?>
+                        <ul class="nav nav-second-level">
                             <li>
-                            <?php
-                            echo anchor('user/show_teacher', '<i class="fa fa-circle"></i> Учители');
-                            ?>
+                                <?php
+                                echo anchor('user/show_teacher', '<i class="fa fa-circle"></i> Учители');
+                                ?>
                             </li>
                             <li>
-                            <?php
-                            echo anchor('user/show_admin', '<i class="fa fa-circle"></i> Администратори');
-                            ?>
+                                <?php
+                                echo anchor('user/show_admin', '<i class="fa fa-circle"></i> Администратори');
+                                ?>
                             </li>
-                            <li>
-                             <?php
-                            echo anchor('doi/show_all_doi', '<i class="glyphicon glyphicon-book"></i> ДОЙ Категории');
-                            ?>
-                             </li>
                         </ul>
                     </li>
-                     <li>
-                        <?php
+                    <li>
+                       <?php
+                       echo anchor('doi/show_all_doi', '<i class="glyphicon glyphicon-book"></i> ДОЙ Категории');
+                       ?>
+                   </li>
+                   <li>
+                    <?php
                     echo anchor('user', '<i class="fa fa-circle"></i> Класове <span class="fa arrow"></span>');
                     ?>
                     <ul class="nav nav-second-level">
-                            <li>
+                        <li>
                             <?php
                             echo anchor('classes/show_classes', '<i class="fa fa-circle"></i> Класове');
                             ?>
-                            </li>
-                            <li>
+                        </li>
+                        <li>
                             <?php
                             echo anchor('classes/add_class', '<i class="fa fa-circle"></i> Създай клас');
                             ?>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
 
-            </div>
+        </div>
 
-        </nav>
-        <!-- /. NAV SIDE  -->
+    </nav>
+    <!-- /. NAV SIDE  -->
